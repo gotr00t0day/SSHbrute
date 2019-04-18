@@ -2,7 +2,7 @@
 
 # INSTALLATION
 
-git clone
+git clone</br >
 cd SSHbrute
 chmod +x sshbrute.py
 ./sshbrute.py
