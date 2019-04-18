@@ -1,6 +1,6 @@
 # SSHBrute
 
-#INSTALLATION
+# INSTALLATION
 
 git clone
 cd SSHbrute
