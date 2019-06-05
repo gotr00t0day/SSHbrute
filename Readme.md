@@ -2,7 +2,7 @@
 
 # INSTALLATION
 
-git clone https://github.com/gotr00t0day/SSHbrute.git/br 
+git clone https://github.com/gotr00t0day/SSHbrute.git
 
 cd SSHbrute </br >
 
